@@ -11,7 +11,8 @@ const DATA_BASE = process.env.DATA_BASE_URL.replace("<password>", process.env.DA
 mongoose.connect(DATA_BASE, {
   useNewUrlParser: true,
   useCreateIndex: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 })
   .then(connection => {
     console.log("Connected")
