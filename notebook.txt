@@ -1,0 +1,43 @@
+//////////////////////////////
+//HOW TO CONNECT
+/////////////////////////////
+
+1. Make Schema
+const SchemaClass = new Schema({})
+const Products = mongoose.model("Products", productsSchema);
+module.exports = Products;
+
+2. Connect with URL
+mongoose.connect(DATA_BASE, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+})
+
+3. Create a controller
+const products = await Products.find();
+( ===> mongoose.model("Products", productsSchema).find() )
+
+//////////////////////////////
+//Method of Model
+/////////////////////////////
+1 .find()
+Getting all data
+
+2 .findById()
+Searching by ID
+
+3. .create()
+Post req.body
+
+4. .findByIDAndUpdate()
+.findByIDAndUpdate(-1-, -2-, -3-);
+-1- req.params.id
+-2- req.body ()
+-3-　{ new: true, runValidation: true }
+
+//////////////////////////////
+//What is query ??
+/////////////////////////////
+A query can either be a request for data results from your database or for action on the data, or for both.
